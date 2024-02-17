@@ -18,11 +18,12 @@ from sqlalchemy import (
 )
 from sqlalchemy.dialects import sqlite
 from sqlalchemy.ext.compiler import compiles
-from sqlalchemy.ext.declarative import as_declarative
+
+# from sqlalchemy.ext.declarative import as_declarative
 from sqlalchemy.ext.hybrid import hybrid_property
 from sqlalchemy.orm import exc as orm_exc
 from sqlalchemy.orm import sessionmaker, object_session
-
+from sqlalchemy.orm import as_declarative, declarative_base
 
 # import yaml
 
@@ -34,7 +35,7 @@ def __init__blocked(self, *args, **kwargs):
     )
 
 
-@as_declarative(constructor=__init__blocked)
+@as_declarative()  # constructor=__init__blocked
 class DeclarativeBase(object):
     @property
     def book(self):
