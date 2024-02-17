@@ -113,7 +113,8 @@ if sys.platform == "win32":
 else:
     locales = {
         "en_US.UTF-8": "USD",
-        "fr_FR.UTF-8": "EUR",
+        # "fr_FR.UTF-8": "EUR",
+        "en_GB.UTF-8": "GBP",
     }
 
 
